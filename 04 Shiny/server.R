@@ -10,24 +10,25 @@ require(DT)
 
 shinyServer(function(input, output) {
   
-  KPI_Low_Max_value <- reactive({input$KPI1})     
-  KPI_Medium_Max_value <- reactive({input$KPI2})
+  OPKPI_Bad_Max_value <- reactive({input$OPKPI1})     
+  OPKPI_Good_Min_value <- reactive({input$OPKPI2})
   rv <- reactiveValues(alpha = 0.50)
-  observeEvent(input$light, { rv$alpha <- 0.50 })
-  observeEvent(input$dark, { rv$alpha <- 0.75 })
+  observeEvent(input$lighter, { rv$alpha <- 0.25 })
+  observeEvent(input$darker, { rv$alpha <- 0.55 })
   
-  df1 <- eventReactive(input$clicks1, {data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", 'skipper.cs.utexas.edu:5001/rest/native/?query=
-                                                                                 "SELECT LEADINGCAUSESOFDEATH.YEARDATA, SUM(LEADINGCAUSESOFDEATH.COUNTDATA) AS SUM_COUNT, FREEZIPCODEDATABASE.CITYDATA, LEADINGCAUSESOFDEATH.CAUSES_OF_DEATH, 
-                                                                                 case
-                                                                                 when SUM(LEADINGCAUSESOFDEATH.COUNTDATA) >= "p2" THEN \\\'01 High\\\'
-                                                                                 when SUM(LEADINGCAUSESOFDEATH.COUNTDATA) >= "p1" THEN \\\'02 Medium\\\'
-                                                                                 else \\\'03 Low\\\'
-                                                                                 end COUNTKPI
-                                                                                 From FREEZIPCODEDATABASE JOIN LEADINGCAUSESOFDEATH On FREEZIPCODEDATABASE.Zipcode = LEADINGCAUSESOFDEATH.Zip_Code
-                                                                                 GROUP BY LEADINGCAUSESOFDEATH.YEARDATA, FREEZIPCODEDATABASE.CITYDATA, LEADINGCAUSESOFDEATH.CAUSES_OF_DEATH
-                                                                                 ORDER BY FREEZIPCODEDATABASE.CITYDATA;"
-                                                                                 ')), httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_jzp78', PASS='orcl_jzp78', 
-                                                                                                   MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON', p1=KPI_Low_Max_value(), p2=KPI_Medium_Max_value()), verbose = TRUE)))
+  df1 <- eventReactive(input$clicksHosp, {data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", 'skipper.cs.utexas.edu:5001/rest/native/?query=
+                                                                                    "SELECT COUNTYNAME, ROUND(SUM(INCAMT),1) AS OPMARGIN, TYPEOFCONTROL,
+                                                                                    case
+                                                                                    when ((ROUND(SUM(INCAMT),1)) >= "p2") THEN \\\'01 Good\\\'
+                                                                                    when ((ROUND(SUM(INCAMT),1)) >= "p1") THEN \\\'02 Neutral\\\'
+                                                                                    else \\\'03 Bad\\\'
+                                                                                    end OPKPI
+                                                                                    FROM HOSPITAL_PROFITABILITY
+                                                                                    WHERE INCOMESTATEMENTITEM=\\\'OPERATING_MARGIN\\\' AND YEAR=2011 AND TYPEOFCONTROL != \\\'(null)\\\'
+                                                                                    GROUP BY COUNTYNAME, TYPEOFCONTROL
+                                                                                    ORDER BY COUNTYNAME, TYPEOFCONTROL;"
+                                                                                    ')), httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_jzp78', PASS='orcl_jzp78', 
+                                                                                                      MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON', p1=OPKPI_Bad_Max_value(), p2=OPKPI_Good_Min_value()), verbose = TRUE)))
   })
   
   output$distPlot1 <- renderPlot({             
@@ -36,9 +37,9 @@ shinyServer(function(input, output) {
       scale_x_discrete() +
       scale_y_discrete() +
       labs(title=isolate(input$title)) +
-      labs(x=paste("YEAR"), y=paste("CAUSES OF DEATH")) +
+      labs(x=paste("OPERATING MARGIN"), y=paste("COUNTY")) +
       layer(data=df1(), 
-            mapping=aes(x=LEADINGCAUSESOFDEATH.YEARDATA, y=LEADINGCAUSESOFDEATH.CAUSES_OF_DEATH, label=SUM_COUNT), 
+            mapping=aes(x=TYPEOFCONTROL, y=COUNTYNAME, label=OPMARGIN), 
             stat="identity", 
             stat_params=list(), 
             geom="text",
@@ -46,7 +47,7 @@ shinyServer(function(input, output) {
             position=position_identity()
       ) +
       layer(data=df1(), 
-            mapping=aes(x=LEADINGCAUSESOFDEATH.YEARDATA, y=LEADINGCAUSESOFDEATH.CAUSES_OF_DEATH, fill=COUNTKPI), 
+            mapping=aes(x=TYPEOFCONTROL, y=COUNTYNAME, fill=OPKPI), 
             stat="identity", 
             stat_params=list(), 
             geom="tile",
