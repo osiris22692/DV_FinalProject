@@ -28,31 +28,9 @@ dashboardPage(
                           min = 400, max = 2000,  value = 2000),
               textInput(inputId = "title", 
                         label = "Crosstab Title",
-                        value = "Diamonds Crosstab\nSUM_PRICE, SUM_CARAT, SUM_PRICE / SUM_CARAT"),
+                        value = "Cause Of Death Count For Los Angeles"),
               actionButton(inputId = "clicks1",  label = "Click me"),
               plotOutput("distPlot1")
-      ),
-      
-      # Second tab content
-      tabItem(tabName = "barchart",
-              actionButton(inputId = "clicks2",  label = "Click me"),
-              plotOutput("distPlot2")
-      ),
-      
-      # Third tab content
-      tabItem(tabName = "blending",
-              actionButton(inputId = "clicks3",  label = "Click me"),
-              plotOutput("distPlot3")
-      ),
-      
-      # Fourth tab content
-      tabItem(tabName = "map",
-              leafletOutput("map")
-      ),
-      
-      # Fifth tab content
-      tabItem(tabName = "table",
-              dataTableOutput("table")
       )
     )
   )
