@@ -29,17 +29,42 @@ source("../04 Shiny/server.R", echo = TRUE)
 
 4) We used Tableau to create the following graphs and data visualizations on our topics.
 
-![](HospitalProfitability1.jpg)  
-![](HospitalProfitability2.jpg)  
-![](HospitalProfitability3.jpg)  
+![](./HospitalProfitability1.jpg)  
 
-![](Average_Income_for_regions_of_california.png)  
+![](./HospitalProfitability2.jpg)  
+
+![](./HospitalProfitability3.jpg)  
+
+---
+output: html_document 
+---
+Air Quality & Significance
+===
+**Every day, chemicals are being released into the air. At times, these are beneficial to our environment, but other times, they can be harmful. We explore the importance of maintaining a good Nitrogen Dioxide emission amount, because too much can affect the ozone levels and in turn affect the health of society.
+Additionally, we explored several states and how the air quality has changed over the years.**
+
+![](Air_Quality_changes.png) 
+It's very interesting to compare the air quality over time amongst these selected states. From 2003 to 2014, each state's air quality has improved. However, there are a few states that received better air quality in 2009 than they had in 2014. Still, overall, it's a nice thing to note that the air quality in these states has only gotten better since a decade ago.
+
+![](NO2_in_NYC.png)
+In this graph, the darker boxes indicate the neighborhoods of New York City which are exposed to higher concentrations of Nitrogen Dioxide.
+It's interesting to note how different the Nitrogen Dioxide Levels are throughout the city of New York. Nitrogen Dioxide has potential to be very harmful when its concentration is too high. NO2 is emitted through road traffic as well as other fossil fuels, and takes a part in forming pollutants like O3.
+NO2 is hazardous as it can decrease lung function, lead to illnesses such as bronchitis, and most importantly, it can trigger asthma attacks amongst people with asthma and even children with or without it. Additionally, it has been shown that NO2 exposure enhances allergens' effects.
+<br></br>
+
+![](O3_ED_visits_and_Hospitalizations.png) 
+As noted above, NO2 helps form O3, which increasingly adds to poor air quality. In this graph, the red bars indicate ED visits and the green bars indicate Hospitalizations--both of which are due to O3 induced asthma related incidents.
+We found an interesting correlation between the neighborhoods with higher concentrations of NO2 and these hospital visits. It seems as though Central Harlem was of the highest O3 induced asthma hospitalization, and in the higher range of ED visits. Additionally, Central Harlem was in the top of the NO2 concentration graph.
+A similar match up between the two graphs is seen from Bayside, which had the lowest O3 induced asthma hospitalizations and ED visits. In the NO2 graph, Bayside was amongst the lowest amounts of NO2 concentrations
+<br></br>
+
+
+
+![](Average_Income_for_regions_of_california.png)
+
 ![](Cause_Of_Death_For_Los_Angeles_Crosstab.png)  
-![](Cause_Of_Death_For_Los_Angeles_Bar_Chart.png)  
 
-![](Air_Quality_changes.png)  
-![](NO2_in_NYC.png)  
-![](O3_ED_visits_and_Hospitalizations.png)  
+![](Cause_Of_Death_For_Los_Angeles_Bar_Chart.png)  
 
 5) We deployed the finished shiny app(s) onto the shinyapp.io server after recreating or drawing inspiration from some of the more interesting Tableau graphs and outputs:
 

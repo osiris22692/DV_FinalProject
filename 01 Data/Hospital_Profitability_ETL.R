@@ -3,7 +3,9 @@ require(tidyr)
 require(dplyr)
 require(ggplot2)
 
+
 setwd("~/DataVisualizations/csv")
+
 
 file_path <- "Hospital_Profitability__2009-2013.csv"
 
