@@ -2,7 +2,7 @@ require(tidyr)
 require(dplyr)
 require(ggplot2)
 
-setwd("~/DataVisualizations/csv")
+#setwd("~/../OneDrive/Documents/Class/Fall 2015/DataVisualizations/DV_FinalProject/01 Data")
 
 file_path <- "Leading_Causes_of_Death_by_Zip_Code__1999-2013.csv"
 

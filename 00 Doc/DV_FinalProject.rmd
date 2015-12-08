@@ -6,15 +6,15 @@
 2) We created Extract, Transform, and Load files in R for necessary datas set to prepare the data to be uploaded to the Oracle SQL database to be accessed later in Tableau workbooks and Shiny modules.
 
 ```{r}
-source("../01 Data/Leading_Cause_Of_Death_ETL.R", echo = TRUE)
+source("C:/Users/jasta/OneDrive/Documents/Class/Fall 2015/DataVisualizations/DV_FinalProject/01 Data/Leading_Cause_Of_Death_ETL.R", echo = TRUE)
 ```
 
 ```{r}
-source("../01 Data/Zipcode_file_ETL.R", echo = TRUE)
+source("Zipcode_file_ETL.R", echo = TRUE)
 ```
 
 ```{r}
-source("../01 Data/Hospital_Profitability_ETL.R", echo = TRUE)
+source("Hospital_Profitability_ETL.R", echo = TRUE)
 ```
 
 3) We created a ui.R file and server.R file to launch the Shiny app.

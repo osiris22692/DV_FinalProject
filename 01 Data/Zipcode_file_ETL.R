@@ -2,7 +2,7 @@ require(tidyr)
 require(dplyr)
 require(ggplot2)
 
-setwd("~/DataVisualizations/csv")
+#setwd("~/../OneDrive/Documents/Class/Fall 2015/DataVisualizations/DV_FinalProject/01 Data")
 
 file_path <- "free-zipcode-database.csv"
 
