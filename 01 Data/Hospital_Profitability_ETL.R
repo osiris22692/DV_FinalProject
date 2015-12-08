@@ -3,9 +3,9 @@ require(tidyr)
 require(dplyr)
 require(ggplot2)
 
-setwd("C:/Users/jasta/OneDrive/Documents/Class/Fall 2015/DataVisualizations/Final")
+setwd("~/DataVisualizations/csv")
 
-file_path <- "Hospital_Profitability__2009-2013_working.csv"
+file_path <- "Hospital_Profitability__2009-2013.csv"
 
 df <- read.csv(file_path, stringsAsFactors = FALSE)
 
@@ -45,11 +45,7 @@ library(lubridate)
 # df["State"] <- data.frame(lapply(df["State"], toupper))
 
 # Get rid of all characters in measures except for numbers, the - sign, and period.dimensions
-if( length(measures) > 1 || ! is.na(measures)) {
-  for(m in measures) {
-    df[m] <- data.frame(lapply(df[m], gsub, pattern="[^--.0-9]",replacement= ""))
-  }
-}
+
 
 write.csv(df, paste(gsub(".csv", "", file_path), ".reformatted.csv", sep=""), row.names=FALSE, na = "")
 

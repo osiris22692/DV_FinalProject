@@ -33,6 +33,14 @@ source("../04 Shiny/server.R", echo = TRUE)
 ![](HospitalProfitability2.jpg)  
 ![](HospitalProfitability3.jpg)  
 
+![](Average_Income_for_regions_of_california.png)  
+![](Cause_Of_Death_For_Los_Angeles_Crosstab.png)  
+![](Cause_Of_Death_For_Los_Angeles_Bar_Chart.png)  
+
+![](Air_Quality_changes.png)  
+![](NO2_in_NYC.png)  
+![](O3_ED_visits_and_Hospitalizations.png)  
+
 5) We deployed the finished shiny app(s) onto the shinyapp.io server after recreating or drawing inspiration from some of the more interesting Tableau graphs and outputs:
 
 URL: https://addison.shinyapps.io/Health
