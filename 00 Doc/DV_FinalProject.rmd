@@ -1,9 +1,38 @@
-## DVFinal Project
+## Pollution, Death, Hospitals...
+# The Final Project!
 
-1) We used various data sets and created Extract, Transform, and Load files for each data set to prepare the data to be uploaded to the Oracle SQL database
+1) We used various data sets from California and New York centering around Health, Healthcare, and Environmentmental measures.
 
-3) We created a ui.R file and server.R file to launch the Shiny app
+2) We created Extract, Transform, and Load files in R for necessary datas set to prepare the data to be uploaded to the Oracle SQL database to be accessed later in Tableau workbooks and Shiny modules.
 
-4) We uploaded the finished shiny app onto the shinyapp.io after recreating or drawing inspiration from some of the more interesting Tableau graphs and outputs
+```{r}
+source("../01 Data/Leading_Cause_Of_Death_ETL.R", echo = TRUE)
+```
 
-URL: https://osiris22692.shinyapps.io/DV_FinalProject
+```{r}
+source("../01 Data/Zipcode_file_ETL.R", echo = TRUE)
+```
+
+```{r}
+source("../01 Data/Hospital_Profitability_ETL", echo = TRUE)
+```
+
+3) We created a ui.R file and server.R file to launch the Shiny app:
+
+```{r}
+source("../04 Shiny/ui.R", echo = TRUE)
+```
+
+```{r}
+source("../04 Shiny/server.R", echo = TRUE)
+```
+
+4) We used Tableau to create the following graphs and data visualizations on our topics:
+
+![](./HospitalProfitability1.jpg)  
+![](./HospitalProfitability2.jpg)  
+![](./HospitalProfitability3.jpg)  
+
+5) We deployed the finished shiny app(s) onto the shinyapp.io server after recreating or drawing inspiration from some of the more interesting Tableau graphs and outputs:
+
+URL: https://addison.shinyapps.io/Health
