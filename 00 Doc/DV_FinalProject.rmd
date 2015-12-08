@@ -1,0 +1,9 @@
+## DVFinal Project
+
+1) We used various data sets and created Extract, Transform, and Load files for each data set to prepare the data to be uploaded to the Oracle SQL database
+
+3) We created a ui.R file and server.R file to launch the Shiny app
+
+4) We uploaded the finished shiny app onto the shinyapp.io after recreating or drawing inspiration from some of the more interesting Tableau graphs and outputs
+
+URL: https://osiris22692.shinyapps.io/DV_FinalProject
