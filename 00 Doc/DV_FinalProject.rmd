@@ -1,5 +1,6 @@
 ## Pollution, Death, Hospitals...
 # The Final Project!
+## By: Amy Recio, Joseph Staples, Jonathan Pollard
 
 1) We used various data sets from California and New York centering around Health, Healthcare, and Environmentmental measures.
 
