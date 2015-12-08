@@ -17,7 +17,7 @@ shinyServer(function(input, output) {
   observeEvent(input$dark, { rv$alpha <- 0.75 })
   
   df1 <- eventReactive(input$clicks1, {data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", 'skipper.cs.utexas.edu:5001/rest/native/?query=
-                                                                                 "SELECT COUNTYNAME, ROUND(SUM(INCAMT),1), TYPEOFCONTROL,
+                                                                                 "SELECT COUNTYNAME, ROUND(SUM(INCAMT),1) AS OPMARGIN, TYPEOFCONTROL,
                                                                                  case
                                                                                  when ((ROUND(SUM(INCAMT),1)) >= "p2") THEN \\\'01 Good\\\'
                                                                                  when ((ROUND(SUM(INCAMT),1)) >= "p1") THEN \\\'02 Medium\\\'
@@ -39,7 +39,7 @@ shinyServer(function(input, output) {
       labs(title=isolate(input$title)) +
       labs(x=paste("OPERATING MARGIN"), y=paste("COUNTY")) +
       layer(data=df1(), 
-            mapping=aes(x=COUNTYNAME, y=TYPEOFCONTROL, label=OPMARGIN), 
+            mapping=aes(x=TYPEOFCONTROL, y=COUNTYNAME, label=OPMARGIN), 
             stat="identity", 
             stat_params=list(), 
             geom="text",
@@ -47,7 +47,7 @@ shinyServer(function(input, output) {
             position=position_identity()
       ) +
       layer(data=df1(), 
-            mapping=aes(x=COUNTYNAME, y=TYPEOFCONTROL, fill=OPKPI), 
+            mapping=aes(x=TYPEOFCONTROL, y=COUNTYNAME, fill=OPKPI), 
             stat="identity", 
             stat_params=list(), 
             geom="tile",
