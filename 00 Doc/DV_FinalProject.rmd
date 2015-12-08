@@ -14,10 +14,10 @@ source("../01 Data/Zipcode_file_ETL.R", echo = TRUE)
 ```
 
 ```{r}
-source("../01 Data/Hospital_Profitability_ETL", echo = TRUE)
+source("../01 Data/Hospital_Profitability_ETL.R", echo = TRUE)
 ```
 
-3) We created a ui.R file and server.R file to launch the Shiny app:
+3) We created a ui.R file and server.R file to launch the Shiny app.
 
 ```{r}
 source("../04 Shiny/ui.R", echo = TRUE)
@@ -27,11 +27,11 @@ source("../04 Shiny/ui.R", echo = TRUE)
 source("../04 Shiny/server.R", echo = TRUE)
 ```
 
-4) We used Tableau to create the following graphs and data visualizations on our topics:
+4) We used Tableau to create the following graphs and data visualizations on our topics.
 
-![](./HospitalProfitability1.jpg)  
-![](./HospitalProfitability2.jpg)  
-![](./HospitalProfitability3.jpg)  
+![](HospitalProfitability1.jpg)  
+![](HospitalProfitability2.jpg)  
+![](HospitalProfitability3.jpg)  
 
 5) We deployed the finished shiny app(s) onto the shinyapp.io server after recreating or drawing inspiration from some of the more interesting Tableau graphs and outputs:
 
