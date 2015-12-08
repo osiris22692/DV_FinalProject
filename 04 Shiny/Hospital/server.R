@@ -13,8 +13,8 @@ shinyServer(function(input, output) {
   OPKPI_Bad_Max_value <- reactive({input$OPKPI1})     
   OPKPI_Good_Min_value <- reactive({input$OPKPI2})
   rv <- reactiveValues(alpha = 0.50)
-  observeEvent(input$light, { rv$alpha <- 0.25 })
-  observeEvent(input$dark, { rv$alpha <- 0.55 })
+  observeEvent(input$lighter, { rv$alpha <- 0.25 })
+  observeEvent(input$darker, { rv$alpha <- 0.55 })
   
   df1 <- eventReactive(input$clicksHosp, {data.frame(fromJSON(getURL(URLencode(gsub("\n", " ", 'skipper.cs.utexas.edu:5001/rest/native/?query=
                                                                                  "SELECT COUNTYNAME, ROUND(SUM(INCAMT),1) AS OPMARGIN, TYPEOFCONTROL,

@@ -19,8 +19,8 @@ dashboardPage(
     tabItems(
       # First tab content
       tabItem(tabName = "hospitalcrosstab",
-              actionButton(inputId = "light", label = "Light"),
-              actionButton(inputId = "dark", label = "Dark"),
+              actionButton(inputId = "lighter", label = "Lighter"),
+              actionButton(inputId = "darker", label = "Darker"),
               sliderInput("OPKPI1", "OPKPI_Bad_Max_value:", 
                           min = -240.0, max = -0.1,  value = -0.1),
               sliderInput("OPKPI2", "OPKPI_Good_Min_value:", 
