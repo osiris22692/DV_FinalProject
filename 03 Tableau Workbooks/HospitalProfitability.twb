@@ -421,6 +421,146 @@
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
     </datasource>
+    <datasource inline='true' name='sayonara.microlab.cs.utexas.edu (copy)' version='9.1'>
+      <connection authentication='RDBMS' class='oracle' port='1521' schema='C##CS329E_JZP78' server='sayonara.microlab.cs.utexas.edu' service='orcl' username='C##cs329e_jzp78'>
+        <relation name='HOSPITAL_PROFITABILITY' table='[C##CS329E_JZP78].[HOSPITAL_PROFITABILITY]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>COUNTYNAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[COUNTYNAME]</local-name>
+            <parent-name>[HOSPITAL_PROFITABILITY]</parent-name>
+            <remote-alias>COUNTYNAME</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>4000</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=178,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TYPEOFCONTROL</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TYPEOFCONTROL]</local-name>
+            <parent-name>[HOSPITAL_PROFITABILITY]</parent-name>
+            <remote-alias>TYPEOFCONTROL</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>4000</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=178,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INCOMESTATEMENTITEM</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[INCOMESTATEMENTITEM]</local-name>
+            <parent-name>[HOSPITAL_PROFITABILITY]</parent-name>
+            <remote-alias>INCOMESTATEMENTITEM</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>4000</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=178,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YEAR</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[YEAR]</local-name>
+            <parent-name>[HOSPITAL_PROFITABILITY]</parent-name>
+            <remote-alias>YEAR</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>4</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FACILITYNUMBER</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[FACILITYNUMBER]</local-name>
+            <parent-name>[HOSPITAL_PROFITABILITY]</parent-name>
+            <remote-alias>FACILITYNUMBER</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>4</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INCAMT</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[INCAMT]</local-name>
+            <parent-name>[HOSPITAL_PROFITABILITY]</parent-name>
+            <remote-alias>INCAMT</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>4</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ADJAMTPERDAY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[ADJAMTPERDAY]</local-name>
+            <parent-name>[HOSPITAL_PROFITABILITY]</parent-name>
+            <remote-alias>ADJAMTPERDAY</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>4</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Adjamtperday' datatype='real' name='[ADJAMTPERDAY]' role='measure' type='quantitative' />
+      <column caption='Countyname' datatype='string' name='[COUNTYNAME]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='Facilitynumber' datatype='real' name='[FACILITYNUMBER]' role='measure' type='quantitative' />
+      <column caption='Incamt' datatype='real' name='[INCAMT]' role='measure' type='quantitative' />
+      <column caption='Incomestatementitem' datatype='string' name='[INCOMESTATEMENTITEM]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Typeofcontrol' datatype='string' name='[TYPEOFCONTROL]' role='dimension' type='nominal' />
+      <column caption='Year' datatype='real' name='[YEAR]' role='dimension' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-aliased-fields='true' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
   </datasources>
   <mapsources>
     <mapsource name='Tableau' />
@@ -1106,6 +1246,8 @@
           <field>[excel-direct.42345.871142534721].[none:Year:qk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint />
+      <visual />
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='Operating Margin by Type of Control (Crosstab)'>
       <cards>
@@ -1126,6 +1268,8 @@
           </strip>
         </edge>
       </cards>
+      <viewpoint />
+      <visual />
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='(Positive) Operating Margin by Type of Control (Color Bubbles)'>
       <cards>
@@ -1154,6 +1298,8 @@
           <field>[excel-direct.42345.871142534721].[none:Year:qk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint />
+      <visual />
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='Amount per Adjusted Patient Day by County Name and Type of Control'>
       <cards>
@@ -1181,6 +1327,8 @@
           <field>[excel-direct.42345.871142534721].[none:Year:qk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint />
+      <visual />
     </window>
     <window auto-hidden='0' class='dashboard' maximized='0' name='Dashboard 1'>
       <zones>
@@ -1201,6 +1349,7 @@
       <zones>
         <zone name='(Positive) Operating Margin by Type of Control (Color Bubbles)' pane-specification-id='0' param='[excel-direct.42345.871142534721].[none:Type of Control:nk]' type='color' />
       </zones>
+      <visuals />
     </window>
     <window auto-hidden='0' class='dashboard' maximized='1' name='Dashboard 3'>
       <zones />
@@ -1231,6 +1380,8 @@
           <field>[excel-direct.42345.871142534721].[none:Type of Control:nk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint />
+      <visual />
     </window>
   </windows>
   <thumbnails>
