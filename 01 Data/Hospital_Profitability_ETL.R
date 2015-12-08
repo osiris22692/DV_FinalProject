@@ -3,7 +3,7 @@ require(tidyr)
 require(dplyr)
 require(ggplot2)
 
-#setwd("~/../OneDrive/Documents/Class/Fall 2015/DataVisualizations/DV_FinalProject/01 Data")
+setwd("~/DataVisualizations/DV_FinalProject/01 Data")
 
 file_path <- "Hospital_Profitability__2009-2013_working.csv"
 
