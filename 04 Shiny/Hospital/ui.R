@@ -10,7 +10,7 @@ dashboardPage(
   
   dashboardSidebar(
     sidebarMenu(
-      menuItem("Crosstab", tabName = "crosstab", icon = icon("dashboard"))
+      menuItem("Hospital Profitability", tabName = "hospitalcrosstab", icon = icon("dashboard"))
       
     )
   ),
@@ -18,18 +18,18 @@ dashboardPage(
   dashboardBody(
     tabItems(
       # First tab content
-      tabItem(tabName = "crosstab",
+      tabItem(tabName = "hospitalcrosstab",
               actionButton(inputId = "light", label = "Light"),
               actionButton(inputId = "dark", label = "Dark"),
-              sliderInput("KPI1", "KPI_Low_Max_value:", 
+              sliderInput("OPKPI1", "OPKPI_Bad_Max_value:", 
                           min = -240.0, max = -0.1,  value = -0.1),
-              sliderInput("KPI2", "KPI_Medium_Max_value:", 
+              sliderInput("OPKPI2", "OPKPI_Good_Min_value:", 
                           min = 0, max = 320,  value = 0),
               textInput(inputId = "title", 
                         label = "Crosstab Title",
-                        value = "Operating Margin by County and Region"),
-              actionButton(inputId = "clicks1",  label = "Click me"),
-              plotOutput("distPlot1")
+                        value = "Hospital Operating Margins by County and Type of Controller"),
+              actionButton(inputId = "clicksHosp",  label = "Click me"),
+              plotOutput("distPlot1", width = "100%", height = "1200px")
       )
       
       )
