@@ -44,11 +44,7 @@ library(lubridate)
 # df["State"] <- data.frame(lapply(df["State"], toupper))
 
 # Get rid of all characters in measures except for numbers, the - sign, and period.dimensions
-if( length(measures) > 1 || ! is.na(measures)) {
-  for(m in measures) {
-    df[m] <- data.frame(lapply(df[m], gsub, pattern="[^--.0-9]",replacement= ""))
-  }
-}
+
 
 write.csv(df, paste(gsub(".csv", "", file_path), ".reformatted.csv", sep=""), row.names=FALSE, na = "")
 
