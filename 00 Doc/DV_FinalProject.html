@@ -357,8 +357,8 @@ img {
 ## &gt; require(leaflet)</code></pre>
 <pre><code>## Loading required package: leaflet</code></pre>
 <pre><code>## 
-## &gt; dashboardPage(dashboardHeader(), dashboardSidebar(sidebarMenu(menuItem(&quot;Hospital Profitability&quot;, 
-## +     tabName = &quot;hospitalcrosstab&quot;, icon = icon(&quot;d ...&quot; ... [TRUNCATED] 
+## &gt; dashboardPage(dashboardHeader(), dashboardSidebar(sidebarMenu(menuItem(&quot;Causes of Death&quot;, 
+## +     tabName = &quot;crosstab&quot;, icon = icon(&quot;dashboard&quot;)), me .... [TRUNCATED] 
 ## &lt;body class=&quot;skin-blue&quot; style=&quot;min-height: 611px;&quot;&gt;
 ##   &lt;div class=&quot;wrapper&quot;&gt;
 ##     &lt;header class=&quot;main-header&quot;&gt;
@@ -379,6 +379,12 @@ img {
 ##       &lt;section class=&quot;sidebar&quot;&gt;
 ##         &lt;ul class=&quot;sidebar-menu&quot;&gt;
 ##           &lt;li&gt;
+##             &lt;a href=&quot;#shiny-tab-crosstab&quot; data-toggle=&quot;tab&quot; data-value=&quot;crosstab&quot;&gt;
+##               &lt;i class=&quot;fa fa-dashboard&quot;&gt;&lt;/i&gt;
+##               &lt;span&gt;Causes of Death&lt;/span&gt;
+##             &lt;/a&gt;
+##           &lt;/li&gt;
+##           &lt;li&gt;
 ##             &lt;a href=&quot;#shiny-tab-hospitalcrosstab&quot; data-toggle=&quot;tab&quot; data-value=&quot;hospitalcrosstab&quot;&gt;
 ##               &lt;i class=&quot;fa fa-dashboard&quot;&gt;&lt;/i&gt;
 ##               &lt;span&gt;Hospital Profitability&lt;/span&gt;
@@ -390,9 +396,27 @@ img {
 ##     &lt;div class=&quot;content-wrapper&quot;&gt;
 ##       &lt;section class=&quot;content&quot;&gt;
 ##         &lt;div class=&quot;tab-content&quot;&gt;
+##           &lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane&quot; id=&quot;shiny-tab-crosstab&quot;&gt;
+##             &lt;button id=&quot;light&quot; type=&quot;button&quot; class=&quot;btn btn-default action-button&quot;&gt;Light&lt;/button&gt;
+##             &lt;button id=&quot;dark&quot; type=&quot;button&quot; class=&quot;btn btn-default action-button&quot;&gt;Dark&lt;/button&gt;
+##             &lt;div class=&quot;form-group shiny-input-container&quot;&gt;
+##               &lt;label class=&quot;control-label&quot; for=&quot;KPI1&quot;&gt;KPI_Low_Max_value:&lt;/label&gt;
+##               &lt;input class=&quot;js-range-slider&quot; id=&quot;KPI1&quot; data-min=&quot;1&quot; data-max=&quot;200&quot; data-from=&quot;200&quot; data-step=&quot;1&quot; data-grid=&quot;true&quot; data-grid-num=&quot;9.95&quot; data-grid-snap=&quot;false&quot; data-prettify-separator=&quot;,&quot; data-keyboard=&quot;true&quot; data-keyboard-step=&quot;0.50251256281407&quot; data-drag-interval=&quot;true&quot; data-data-type=&quot;number&quot;/&gt;
+##             &lt;/div&gt;
+##             &lt;div class=&quot;form-group shiny-input-container&quot;&gt;
+##               &lt;label class=&quot;control-label&quot; for=&quot;KPI2&quot;&gt;KPI_Medium_Max_value:&lt;/label&gt;
+##               &lt;input class=&quot;js-range-slider&quot; id=&quot;KPI2&quot; data-min=&quot;400&quot; data-max=&quot;2000&quot; data-from=&quot;2000&quot; data-step=&quot;1&quot; data-grid=&quot;true&quot; data-grid-num=&quot;10&quot; data-grid-snap=&quot;false&quot; data-prettify-separator=&quot;,&quot; data-keyboard=&quot;true&quot; data-keyboard-step=&quot;0.0625&quot; data-drag-interval=&quot;true&quot; data-data-type=&quot;number&quot;/&gt;
+##             &lt;/div&gt;
+##             &lt;div class=&quot;form-group shiny-input-container&quot;&gt;
+##               &lt;label for=&quot;title&quot;&gt;Crosstab Title&lt;/label&gt;
+##               &lt;input id=&quot;title&quot; type=&quot;text&quot; class=&quot;form-control&quot; value=&quot;Cause Of Death Count For Los Angeles&quot;/&gt;
+##             &lt;/div&gt;
+##             &lt;button id=&quot;clicks1&quot; type=&quot;button&quot; class=&quot;btn btn-default action-button&quot;&gt;Click me&lt;/button&gt;
+##             &lt;div id=&quot;distPlot1&quot; class=&quot;shiny-plot-output&quot; style=&quot;width: 100% ; height: 400px&quot;&gt;&lt;/div&gt;
+##           &lt;/div&gt;
 ##           &lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane&quot; id=&quot;shiny-tab-hospitalcrosstab&quot;&gt;
-##             &lt;button id=&quot;lighter&quot; type=&quot;button&quot; class=&quot;btn btn-default action-button&quot;&gt;Lighter&lt;/button&gt;
-##             &lt;button id=&quot;darker&quot; type=&quot;button&quot; class=&quot;btn btn-default action-button&quot;&gt;Darker&lt;/button&gt;
+##             &lt;button id=&quot;light&quot; type=&quot;button&quot; class=&quot;btn btn-default action-button&quot;&gt;Light&lt;/button&gt;
+##             &lt;button id=&quot;dark&quot; type=&quot;button&quot; class=&quot;btn btn-default action-button&quot;&gt;Dark&lt;/button&gt;
 ##             &lt;div class=&quot;form-group shiny-input-container&quot;&gt;
 ##               &lt;label class=&quot;control-label&quot; for=&quot;OPKPI1&quot;&gt;OPKPI_Bad_Max_value:&lt;/label&gt;
 ##               &lt;input class=&quot;js-range-slider&quot; id=&quot;OPKPI1&quot; data-min=&quot;-240&quot; data-max=&quot;-0.1&quot; data-from=&quot;-0.1&quot; data-step=&quot;2&quot; data-grid=&quot;true&quot; data-grid-num=&quot;9.99583333333333&quot; data-grid-snap=&quot;false&quot; data-prettify-separator=&quot;,&quot; data-keyboard=&quot;true&quot; data-keyboard-step=&quot;0.833680700291788&quot; data-drag-interval=&quot;true&quot; data-data-type=&quot;number&quot;/&gt;
@@ -406,7 +430,7 @@ img {
 ##               &lt;input id=&quot;title&quot; type=&quot;text&quot; class=&quot;form-control&quot; value=&quot;Hospital Operating Margins by County and Type of Controller&quot;/&gt;
 ##             &lt;/div&gt;
 ##             &lt;button id=&quot;clicksHosp&quot; type=&quot;button&quot; class=&quot;btn btn-default action-button&quot;&gt;Click me&lt;/button&gt;
-##             &lt;div id=&quot;distPlot1&quot; class=&quot;shiny-plot-output&quot; style=&quot;width: 100% ; height: 1200px&quot;&gt;&lt;/div&gt;
+##             &lt;div id=&quot;distPlot2&quot; class=&quot;shiny-plot-output&quot; style=&quot;width: 100% ; height: 1200px&quot;&gt;&lt;/div&gt;
 ##           &lt;/div&gt;
 ##         &lt;/div&gt;
 ##       &lt;/section&gt;
@@ -458,10 +482,11 @@ img {
 ##     dataTableOutput, renderDataTable</code></pre>
 <pre><code>## 
 ## &gt; shinyServer(function(input, output) {
-## +     OPKPI_Bad_Max_value &lt;- reactive({
-## +         input$OPKPI1
+## +     KPI_Low_Max_value &lt;- reactive({
+## +         input$KPI1
 ## +     })
-## +     OPKPI_Good_Min_value &lt;- reactive .... [TRUNCATED]</code></pre>
+## +     KPI_Medium_Max_value &lt;- reactive({
+## + .... [TRUNCATED]</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>We used Tableau to create the following graphs and data visualizations on our topics.</li>
 </ol>
